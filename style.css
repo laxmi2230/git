@@ -1,0 +1,185 @@
+ body {
+  margin: 40px 0;
+  font-family: "Raleway";
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #BCAAA4;
+  -webkit-font-smoothing: antialiased;
+}
+
+.title {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 700;
+  color: yellow;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1 + p, p + p {
+  margin-top: 10px;
+}
+
+.container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrap {
+  margin: 10px;
+  -webkit-transform: perspective(800px);
+          transform: perspective(800px);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  cursor: pointer;
+}
+.card-wrap:hover .card-info {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.card-wrap:hover .card-info p {
+  opacity: 1;
+}
+.card-wrap:hover .card-info, .card-wrap:hover .card-info p {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.card-wrap:hover .card-info:after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.card-wrap:hover .card-bg {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.8;
+}
+.card-wrap:hover .card {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 300px;
+  height: 400px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95), opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  pointer-events: none;
+}
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  -webkit-transform: translateY(40%);
+          transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.card-info p {
+  opacity: 0;
+  text-shadow: black 0 2px 3px;
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.card-info * {
+  position: relative;
+  z-index: 1;
+}
+.card-info:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-blend-mode: overlay;
+  opacity: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-info h1 {
+  font-family: "Playfair Display";
+  font-size: 36px;
+  font-weight: 700;
+  text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Bevan);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+
+h1 {
+  font-family: "Bevan";
+  font-size: 40px;
+ /* font-weight: 100;
+  /* line-height: 130px; */
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  /*width: 100%;
+  /* margin: 0 auto; */
+  text-shadow: 
+    0px 0px 0 rgb(-14,144,41),-1px 1px 0 rgb(-19,139,36),-2px 2px 0 rgb(-23,135,32),-3px 3px 0 rgb(-27,131,28),-4px 4px 0 rgb(-32,126,23),-5px 5px 0 rgb(-36,122,19),-6px 6px 0 rgb(-40,118,15),-7px 7px 0 rgb(-45,113,10),-8px 8px 0 rgb(-49,109,6),-9px 9px 0 rgb(-53,105,2),-10px 10px 0 rgb(-58,100,-3),-11px 11px 0 rgb(-62,96,-7),-12px 12px 0 rgb(-67,91,-12),-13px 13px 0 rgb(-71,87,-16),-14px 14px 0 rgb(-75,83,-20),-15px 15px 0 rgb(-80,78,-25),-16px 16px 0 rgb(-84,74,-29),-17px 17px 0 rgb(-88,70,-33),-18px 18px 0 rgb(-93,65,-38),-19px 19px 0 rgb(-97,61,-42), -20px 20px 0 rgb(-101,57,-46);   
+}
+
+
+ 
+h1 span:nth-child(2) { 
+  /* z-index: 14; */
+  text-shadow:0px 0px 0 rgb(167,42,152),-1px 1px 0 rgb(162,37,147),-2px 2px 0 rgb(158,33,143),-3px 3px 0 rgb(154,29,139),-4px 4px 0 rgb(149,24,134),-5px 5px 0 rgb(145,20,130),-6px 6px 0 rgb(141,16,126),-7px 7px 0 rgb(136,11,121),-8px 8px 0 rgb(132,7,117),-9px 9px 0 rgb(128,3,113),-10px 10px 0 rgb(123,-2,108),-11px 11px 0 rgb(119,-6,104),-12px 12px 0 rgb(114,-11,99),-13px 13px 0 rgb(110,-15,95),-14px 14px 0 rgb(106,-19,91),-15px 15px 0 rgb(101,-24,86),-16px 16px 0 rgb(97,-28,82),-17px 17px 0 rgb(93,-32,78),-18px 18px 0 rgb(88,-37,73),-19px 19px 0 rgb(84,-41,69), -20px 20px 0 rgb(80,-45,65);
+}
+/* h1 span:nth-child(3) { 
+  z-index: 19;
+  text-shadow:0px 0px 0 rgb(21, 145, 52),-1px 1px 0 rgb(13, 158, 57),-2px 2px 0 rgb(22, 141, 71),-3px 3px 0 rgb(21, 146, 73),-4px 4px 0 rgb(24,124,149),-5px 5px 0 rgb(20,120,145),-6px 6px 0 rgb(16,116,141),-7px 7px 0 rgb(11,111,136),-8px 8px 0 rgb(7,107,132),-9px 9px 0 rgb(3,103,128),-10px 10px 0 rgb(-2,98,123),-11px 11px 0 rgb(-6,94,119),-12px 12px 0 rgb(-11,89,114),-13px 13px 0 rgb(-15,85,110),-14px 14px 0 rgb(-19,81,106),-15px 15px 0 rgb(-24,76,101),-16px 16px 0 rgb(-28,72,97),-17px 17px 0 rgb(-32,68,93),-18px 18px 0 rgb(-37,63,88),-19px 19px 0 rgb(-41,59,84), -20px 20px 0 rgb(-45,55,80);
+} */
+h1 span:nth-child(4) { 
+  /* z-index: 18; */
+   text-shadow:0px 0px 0 rgb(42,142,167),-1px 1px 0 rgb(37,137,162),-2px 2px 0 rgb(33,133,158),-3px 3px 0 rgb(29,129,154),-4px 4px 0 rgb(24,124,149),-5px 5px 0 rgb(20,120,145),-6px 6px 0 rgb(16,116,141),-7px 7px 0 rgb(11,111,136),-8px 8px 0 rgb(7,107,132),-9px 9px 0 rgb(3,103,128),-10px 10px 0 rgb(-2,98,123),-11px 11px 0 rgb(-6,94,119),-12px 12px 0 rgb(-11,89,114),-13px 13px 0 rgb(-15,85,110),-14px 14px 0 rgb(-19,81,106),-15px 15px 0 rgb(-24,76,101),-16px 16px 0 rgb(-28,72,97),-17px 17px 0 rgb(-32,68,93),-18px 18px 0 rgb(-37,63,88),-19px 19px 0 rgb(-41,59,84), -20px 20px 0 rgb(-45,55,80);
+}
+h1 span:nth-child(5) { 
+  /* z-index: 18; */
+  text-shadow:0px 0px 0 rgb(221,-5,59),-1px 1px 0 rgb(216,-10,54),-2px 2px 0 rgb(212,-14,50),-3px 3px 0 rgb(208,-18,46),-4px 4px 0 rgb(203,-23,41),-5px 5px 0 rgb(199,-27,37),-6px 6px 0 rgb(195,-31,33),-7px 7px 0 rgb(190,-36,28),-8px 8px 0 rgb(186,-40,24),-9px 9px 0 rgb(182,-44,20),-10px 10px 0 rgb(177,-49,15),-11px 11px 0 rgb(173,-53,11),-12px 12px 0 rgb(168,-58,6),-13px 13px 0 rgb(164,-62,2),-14px 14px 0 rgb(160,-66,-2),-15px 15px 0 rgb(155,-71,-7),-16px 16px 0 rgb(151,-75,-11),-17px 17px 0 rgb(147,-79,-15),-18px 18px 0 rgb(142,-84,-20),-19px 19px 0 rgb(138,-88,-24), -20px 20px 0 rgb(134,-92,-28);
+}
+h1 span:nth-child(7) { 
+  /* z-index: 14; */
+  text-shadow:0px 0px 0 rgb(167,42,152),-1px 1px 0 rgb(162,37,147),-2px 2px 0 rgb(158,33,143),-3px 3px 0 rgb(154,29,139),-4px 4px 0 rgb(149,24,134),-5px 5px 0 rgb(145,20,130),-6px 6px 0 rgb(141,16,126),-7px 7px 0 rgb(136,11,121),-8px 8px 0 rgb(132,7,117),-9px 9px 0 rgb(128,3,113),-10px 10px 0 rgb(123,-2,108),-11px 11px 0 rgb(119,-6,104),-12px 12px 0 rgb(114,-11,99),-13px 13px 0 rgb(110,-15,95),-14px 14px 0 rgb(106,-19,91),-15px 15px 0 rgb(101,-24,86),-16px 16px 0 rgb(97,-28,82),-17px 17px 0 rgb(93,-32,78),-18px 18px 0 rgb(88,-37,73),-19px 19px 0 rgb(84,-41,69), -20px 20px 0 rgb(80,-45,65);
+}
+h1 span:nth-child(9) { 
+  /* z-index: 18; */
+  text-shadow:0px 0px 0 rgb(221,-5,59),-1px 1px 0 rgb(216,-10,54),-2px 2px 0 rgb(212,-14,50),-3px 3px 0 rgb(208,-18,46),-4px 4px 0 rgb(203,-23,41),-5px 5px 0 rgb(199,-27,37),-6px 6px 0 rgb(195,-31,33),-7px 7px 0 rgb(190,-36,28),-8px 8px 0 rgb(186,-40,24),-9px 9px 0 rgb(182,-44,20),-10px 10px 0 rgb(177,-49,15),-11px 11px 0 rgb(173,-53,11),-12px 12px 0 rgb(168,-58,6),-13px 13px 0 rgb(164,-62,2),-14px 14px 0 rgb(160,-66,-2),-15px 15px 0 rgb(155,-71,-7),-16px 16px 0 rgb(151,-75,-11),-17px 17px 0 rgb(147,-79,-15),-18px 18px 0 rgb(142,-84,-20),-19px 19px 0 rgb(138,-88,-24), -20px 20px 0 rgb(134,-92,-28);
+}
+
+body
+{
+  background: url("https://wallpaperstock.net/wallpapers/thumbs1/43850hd.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
